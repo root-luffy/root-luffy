@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="1200" height="400" role="img" aria-label="root-luffy: building tools that remove friction">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#070b1f"/>
+      <stop offset="0.65" stop-color="#101a3d"/>
+      <stop offset="1" stop-color="#16244f"/>
+    </linearGradient>
+    <linearGradient id="name" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#fbbf24"/>
+      <stop offset="0.55" stop-color="#f87171"/>
+      <stop offset="1" stop-color="#e879f9"/>
+    </linearGradient>
+    <radialGradient id="moon" cx="0.4" cy="0.4" r="0.6">
+      <stop offset="0" stop-color="#fff7d6"/>
+      <stop offset="1" stop-color="#fcd34d"/>
+    </radialGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#fcd34d" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#fcd34d" stop-opacity="0"/>
+    </radialGradient>
+    <clipPath id="frame"><rect width="1200" height="400" rx="24"/></clipPath>
+    <style>
+      text { font-family: "Segoe UI", Inter, Helvetica, Arial, sans-serif; }
+      .mono { font-family: "Cascadia Code", "JetBrains Mono", Consolas, Menlo, monospace; }
+      .twinkle { animation: tw 3s ease-in-out infinite; }
+      .t2 { animation-delay: 1s; } .t3 { animation-delay: 2s; }
+      @keyframes tw { 0%,100% { opacity: .25 } 50% { opacity: 1 } }
+      .type { clip-path: inset(0 100% 0 0); animation: type 2.2s steps(17) .4s forwards; }
+      @keyframes type { to { clip-path: inset(0 0 0 0) } }
+      .cursor { animation: blink 1s step-end infinite; }
+      @keyframes blink { 50% { opacity: 0 } }
+      .wave1 { animation: drift 9s ease-in-out infinite alternate; }
+      .wave2 { animation: drift 13s ease-in-out infinite alternate-reverse; }
+      @keyframes drift { from { transform: translateX(0) } to { transform: translateX(-60px) } }
+      .ship { animation: bob 4s ease-in-out infinite; transform-origin: 930px 300px; }
+      @keyframes bob { 0%,100% { transform: translateY(0) rotate(-2deg) } 50% { transform: translateY(-6px) rotate(2deg) } }
+    </style>
+  </defs>
+
+  <g clip-path="url(#frame)">
+    <rect width="1200" height="400" fill="url(#sky)"/>
+
+    <!-- stars -->
+    <g fill="#ffffff">
+      <circle class="twinkle" cx="620" cy="60" r="1.6"/>
+      <circle class="twinkle t2" cx="700" cy="120" r="1.2"/>
+      <circle class="twinkle t3" cx="780" cy="40" r="1.8"/>
+      <circle class="twinkle" cx="1120" cy="70" r="1.4"/>
+      <circle class="twinkle t2" cx="1060" cy="160" r="1.1"/>
+      <circle class="twinkle t3" cx="560" cy="150" r="1.3"/>
+      <circle class="twinkle t2" cx="480" cy="40" r="1.2"/>
+      <circle class="twinkle" cx="860" cy="180" r="1"/>
+    </g>
+
+    <!-- moon -->
+    <circle cx="1010" cy="110" r="110" fill="url(#glow)"/>
+    <circle cx="1010" cy="110" r="46" fill="url(#moon)"/>
+    <circle cx="995" cy="98" r="7" fill="#f5c542" opacity="0.5"/>
+    <circle cx="1024" cy="126" r="5" fill="#f5c542" opacity="0.5"/>
+
+    <!-- ship -->
+    <g class="ship">
+      <path d="M868 292 H992 L972 322 H888 Z" fill="#1e293b" stroke="#fbbf24" stroke-width="2"/>
+      <path d="M930 292 V200" stroke="#e2e8f0" stroke-width="3"/>
+      <path d="M933 206 L985 262 H933 Z" fill="#f8fafc"/>
+      <path d="M927 214 L886 262 H927 Z" fill="#e2e8f0"/>
+      <path d="M930 200 l20 6 -20 6z" fill="#f87171"/>
+      <circle cx="959" cy="243" r="7" fill="none" stroke="#1e293b" stroke-width="2"/>
+      <path d="M953 250 L965 236 M953 236 L965 250" stroke="#1e293b" stroke-width="2"/>
+    </g>
+
+    <!-- waves -->
+    <g class="wave2" opacity="0.55">
+      <path d="M0 318 Q 60 300 120 318 T 240 318 T 360 318 T 480 318 T 600 318 T 720 318 T 840 318 T 960 318 T 1080 318 T 1200 318 T 1320 318 V400 H0 Z" fill="#1d3a7a"/>
+    </g>
+    <g class="wave1">
+      <path d="M0 338 Q 50 322 100 338 T 200 338 T 300 338 T 400 338 T 500 338 T 600 338 T 700 338 T 800 338 T 900 338 T 1000 338 T 1100 338 T 1200 338 T 1300 338 V400 H0 Z" fill="#0f2557"/>
+    </g>
+
+    <!-- terminal prompt -->
+    <g transform="translate(72 70)">
+      <text class="mono" font-size="20" fill="#34d399">root@luffy<tspan fill="#94a3b8">:</tspan><tspan fill="#60a5fa">~</tspan><tspan fill="#94a3b8">$ </tspan></text>
+      <text class="mono type" x="176" font-size="20" fill="#e2e8f0">whoami --set-sail</text>
+      <rect class="cursor" x="392" y="-17" width="11" height="22" fill="#e2e8f0"/>
+    </g>
+
+    <!-- name + tagline -->
+    <text x="68" y="172" font-size="84" font-weight="800" fill="url(#name)" letter-spacing="-2">root-luffy</text>
+    <text x="72" y="218" font-size="25" fill="#cbd5e1">I build tools that remove friction:</text>
+    <text x="72" y="250" font-size="25" fill="#cbd5e1">gateways, terminals and local clouds.</text>
+    <text class="mono" x="72" y="292" font-size="16" fill="#64748b">~/milky-way  ·  rust  ·  typescript  ·  python  ·  shell</text>
+  </g>
+</svg>
