@@ -1,20 +1,50 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 200" width="580" height="200" role="img" aria-label="Cloudnest.dev: Your AWS cloud, nested on localhost:4566. Built on LocalStack. Web console in the works.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 210" width="580" height="210" role="img" aria-label="Cloudnest.dev: Your AWS cloud, nested on localhost:4566. Built on LocalStack. Web console in the works.">
   <defs>
-    <linearGradient id="a" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#38bdf8"/><stop offset="1" stop-color="#fbbf24"/></linearGradient>
+    <linearGradient id="acc" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#38bdf8"/><stop offset="1" stop-color="#fbbf24"/></linearGradient>
+    <linearGradient id="sweep" gradientUnits="userSpaceOnUse" x1="-580" y1="0" x2="0" y2="0">
+      <stop offset="0" stop-color="#38bdf8" stop-opacity="0"/>
+      <stop offset=".5" stop-color="#38bdf8" stop-opacity=".95"/>
+      <stop offset=".75" stop-color="#fbbf24" stop-opacity=".95"/>
+      <stop offset="1" stop-color="#fbbf24" stop-opacity="0"/>
+      <animateTransform attributeName="gradientTransform" type="translate" values="0 0;1160 0" dur="5s" repeatCount="indefinite"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="1" cy="0" r="1"><stop offset="0" stop-color="#38bdf8" stop-opacity=".18"/><stop offset="1" stop-color="#38bdf8" stop-opacity="0"/></radialGradient>
     <style>
       text { font-family: "Segoe UI", Inter, Helvetica, Arial, sans-serif; }
-      .card { transition: none; }
+      .in { opacity: 0; animation: in .6s ease-out forwards; }
+      @keyframes in { from { opacity: 0; transform: translateY(6px) } to { opacity: 1; transform: none } }
+      .pulse { transform-box: fill-box; transform-origin: center; animation: pulse 2.8s ease-in-out infinite; }
+      @keyframes pulse { 0%,100% { transform: scale(1) } 50% { transform: scale(1.07) } }
     </style>
   </defs>
-  <rect x="1" y="1" width="578" height="198" rx="18" fill="#0d1224" stroke="#26304f" stroke-width="2"/>
-  <rect x="1" y="1" width="6" height="198" rx="3" fill="url(#a)"/>
-  <rect x="28" y="28" width="56" height="56" rx="14" fill="url(#a)"/>
-  <text x="56" y="67" text-anchor="middle" font-size="28" font-weight="800" fill="#0d1224">☁</text>
+  <rect x="1" y="1" width="578" height="208" rx="18" fill="#0d1224"/>
+  <rect x="1" y="1" width="578" height="208" rx="18" fill="url(#glow)"/>
+  <rect x="1" y="1" width="578" height="208" rx="18" fill="none" stroke="#222c4d" stroke-width="2"/>
+  <rect x="1" y="1" width="578" height="208" rx="18" fill="none" stroke="url(#sweep)" stroke-width="2.5"/>
+
+  <g class="pulse"><rect x="28" y="28" width="56" height="56" rx="14" fill="url(#acc)"/>
+  <text x="56" y="67" text-anchor="middle" font-size="28" font-weight="800" fill="#0d1224">☁</text></g>
   <text x="104" y="54" font-size="26" font-weight="800" fill="#f1f5f9">Cloudnest.dev</text>
   <text x="104" y="78" font-size="14" fill="#7c86a8">github.com/root-luffy/Cloudnest.dev</text>
-  <text x="28" y="122" font-size="17" fill="#cbd5e1">Your AWS cloud, nested on localhost:4566.</text>
-  <text x="28" y="146" font-size="17" fill="#cbd5e1">Built on LocalStack. Web console in the works.</text>
-  <circle cx="34" cy="176" r="6" fill="#3572a5"/>
-  <text x="46" y="181" font-size="14" fill="#94a3b8">Python</text>
-  <text x="552" y="181" text-anchor="end" font-size="14" fill="#7c86a8">35 AWS APIs · Docker</text>
+
+  <g transform="translate(436 18)">
+    <g>
+      <path d="M30 52 a16 16 0 0 1 8 -30 a22 22 0 0 1 40 4 a14 14 0 0 1 12 26 z" fill="#1c2748" stroke="#38bdf8" stroke-width="2"/>
+      <animateTransform attributeName="transform" type="translate" values="-4 0;4 0;-4 0" dur="6s" repeatCount="indefinite"/>
+    </g>
+    <path d="M22 70 Q60 94 98 70" fill="none" stroke="#b45309" stroke-width="5" stroke-linecap="round"/>
+    <g font-family="Segoe UI, Arial, sans-serif" font-size="9" font-weight="700" text-anchor="middle" fill="#0d1224">
+      <g><ellipse cx="44" cy="66" rx="9" ry="11" fill="#38bdf8"/><text x="44" y="69">S3</text>
+        <animateTransform attributeName="transform" type="translate" values="0 0;0 -3;0 0" dur="1.8s" repeatCount="indefinite"/></g>
+      <g><ellipse cx="60" cy="62" rx="10" ry="13" fill="#fbbf24"/><text x="60" y="66">λ</text>
+        <animateTransform attributeName="transform" type="translate" values="0 0;0 -3;0 0" dur="1.8s" begin=".3s" repeatCount="indefinite"/></g>
+      <g><ellipse cx="76" cy="66" rx="9" ry="11" fill="#a78bfa"/><text x="76" y="69">SQS</text>
+        <animateTransform attributeName="transform" type="translate" values="0 0;0 -3;0 0" dur="1.8s" begin=".6s" repeatCount="indefinite"/></g>
+    </g></g>
+
+  <text x="28" y="130" font-size="17" fill="#cbd5e1" class="in" style="animation-delay:.2s">Your AWS cloud, nested on localhost:4566.</text>
+  <text x="28" y="154" font-size="17" fill="#cbd5e1" class="in" style="animation-delay:.35s">Built on LocalStack. Web console in the works.</text>
+  <circle cx="34" cy="186" r="6" fill="#3572a5"/>
+  <text x="46" y="191" font-size="14" fill="#94a3b8">Python</text>
+  <text x="552" y="191" text-anchor="end" font-size="14" fill="#7c86a8">35 AWS APIs · Docker</text>
 </svg>

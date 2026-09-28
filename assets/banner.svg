@@ -27,7 +27,8 @@
       @keyframes tw { 0%,100% { opacity: .25 } 50% { opacity: 1 } }
       .type { clip-path: inset(0 100% 0 0); animation: type 2.2s steps(17) .4s forwards; }
       @keyframes type { to { clip-path: inset(0 0 0 0) } }
-      .cursor { animation: blink 1s step-end infinite; }
+      .cursor { animation: move 2.2s steps(17) .4s both, blink 1s step-end 2.6s infinite; }
+      @keyframes move { from { transform: translateX(-204px) } to { transform: translateX(0) } }
       @keyframes blink { 50% { opacity: 0 } }
       .wave1 { animation: drift 9s ease-in-out infinite alternate; }
       .wave2 { animation: drift 13s ease-in-out infinite alternate-reverse; }
@@ -81,7 +82,7 @@
     <g transform="translate(72 70)">
       <text class="mono" font-size="20" fill="#34d399">root@luffy<tspan fill="#94a3b8">:</tspan><tspan fill="#60a5fa">~</tspan><tspan fill="#94a3b8">$ </tspan></text>
       <text class="mono type" x="176" font-size="20" fill="#e2e8f0">whoami --set-sail</text>
-      <rect class="cursor" x="392" y="-17" width="11" height="22" fill="#e2e8f0"/>
+      <rect class="cursor" x="382" y="-17" width="11" height="22" fill="#e2e8f0"/>
     </g>
 
     <!-- name + tagline -->

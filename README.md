@@ -3,20 +3,20 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/root-luffy?tab=repositories"><img alt="Repositories" src="https://img.shields.io/badge/repos-explore-fbbf24?style=flat-square&labelColor=0d1224"></a>
+  <a href="https://github.com/root-luffy?tab=repositories"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=2600&pause=900&color=FBBF24&center=true&vCenter=true&width=760&height=44&lines=Building+AgentGate%3A+a+checkpoint+for+AI+agents;Flipping+monitors+with+one+hotkey;Ricing+terminals%2C+ghost+included;Nesting+AWS+on+localhost%3A4566;If+I+do+it+twice%2C+it+becomes+a+tool" alt="Building AgentGate. Flipping monitors with one hotkey. Ricing terminals. Nesting AWS on localhost."></a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/root-luffy"><img alt="Profile views" src="https://komarev.com/ghpvc/?username=root-luffy&label=voyagers&color=f87171&style=flat-square&abbreviated=true"></a>
   <a href="https://github.com/root-luffy/AgentGate"><img alt="Now building: AgentGate" src="https://img.shields.io/badge/now%20building-AgentGate-34d399?style=flat-square&labelColor=0d1224"></a>
   <a href="https://github.com/root-luffy/UpsideDown"><img alt="Latest: UpsideDown" src="https://img.shields.io/badge/latest-UpsideDown-f472b6?style=flat-square&labelColor=0d1224"></a>
 </p>
 
-### ⚓ About me
+<p align="center">
+  <a href="https://github.com/root-luffy?tab=repositories"><img src="assets/about.svg" alt="About me: I build small, sharp tools for the friction I hit every day, then open-source them. Now building AgentGate, a Rust gateway that decides which AI agent may call which MCP tool. Learning more Rust, and poking at Bitcoin, cryptography and wallets. Terminal ricer. Based somewhere in the Milky Way." width="100%"></a>
+</p>
 
-- 🛠️ I build small, sharp tools for the friction I hit every day, then open-source them.
-- 🔐 Right now: **AgentGate**, a Rust gateway that decides which AI agent may call which MCP tool.
-- 🦀 Learning more Rust, and poking at Bitcoin, cryptography and wallets on the side.
-- 🖥️ Terminal ricer. My Ghostty setup has its own repo.
-- 📍 Based somewhere in the Milky Way.
-
-### 🧭 Featured projects
+<h3 align="center">🧭 Featured voyages</h3>
 
 <p align="center">
   <a href="https://github.com/root-luffy/AgentGate"><img src="assets/cards/agentgate.svg" alt="AgentGate: the security checkpoint between AI agents and their MCP tools" width="49%"></a>
@@ -25,26 +25,22 @@
   <a href="https://github.com/root-luffy/Cloudnest.dev"><img src="assets/cards/cloudnest.svg" alt="Cloudnest.dev: your AWS cloud on localhost, built on LocalStack" width="49%"></a>
 </p>
 
-### 🛠️ Tech I sail with
+<h3 align="center">🛠️ Tech I sail with</h3>
 
-<p>
-  <a href="https://www.rust-lang.org"><img alt="Rust" src="https://img.shields.io/badge/Rust-0d1224?style=for-the-badge&logo=rust&logoColor=dea584"></a>
-  <a href="https://www.typescriptlang.org"><img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-0d1224?style=for-the-badge&logo=typescript&logoColor=3178c6"></a>
-  <a href="https://www.python.org"><img alt="Python" src="https://img.shields.io/badge/Python-0d1224?style=for-the-badge&logo=python&logoColor=ffd43b"></a>
-  <a href="https://nextjs.org"><img alt="Next.js" src="https://img.shields.io/badge/Next.js-0d1224?style=for-the-badge&logo=nextdotjs&logoColor=white"></a>
-  <a href="https://react.dev"><img alt="React" src="https://img.shields.io/badge/React-0d1224?style=for-the-badge&logo=react&logoColor=61dafb"></a>
-  <a href="https://fastapi.tiangolo.com"><img alt="FastAPI" src="https://img.shields.io/badge/FastAPI-0d1224?style=for-the-badge&logo=fastapi&logoColor=009688"></a>
-  <a href="https://www.postgresql.org"><img alt="PostgreSQL" src="https://img.shields.io/badge/PostgreSQL-0d1224?style=for-the-badge&logo=postgresql&logoColor=4169e1"></a>
-  <a href="https://www.docker.com"><img alt="Docker" src="https://img.shields.io/badge/Docker-0d1224?style=for-the-badge&logo=docker&logoColor=2496ed"></a>
-  <a href="https://kernel.org"><img alt="Linux" src="https://img.shields.io/badge/Linux-0d1224?style=for-the-badge&logo=linux&logoColor=fcc624"></a>
-  <a href="https://www.gnu.org/software/bash/"><img alt="Bash" src="https://img.shields.io/badge/Bash-0d1224?style=for-the-badge&logo=gnubash&logoColor=4eaa25"></a>
-  <a href="https://ghostty.org"><img alt="Ghostty" src="https://img.shields.io/badge/Ghostty-0d1224?style=for-the-badge&logo=ghostty&logoColor=a78bfa"></a>
+<p align="center">
+  <a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=rust,ts,py,nextjs,react,fastapi,postgres,docker,aws,linux,bash,git&perline=12" alt="Rust, TypeScript, Python, Next.js, React, FastAPI, PostgreSQL, Docker, AWS, Linux, Bash, Git"></a>
 </p>
 
-### 🏴‍☠️ Philosophy
+<h3 align="center">📈 Ship's log</h3>
 
-> If I do it twice by hand, it becomes a tool.<br>
-> If the tool is useful, it becomes a repo.<br>
-> If the repo is useful, it gets a banner. 🙂
+<p align="center">
+  <a href="https://github.com/root-luffy?tab=repositories"><img src="assets/generated/stats.svg" alt="Live GitHub stats: contributions, commits, repos, stars, languages and a year of activity" width="100%"></a>
+</p>
 
-<p align="center"><code>root@luffy:~$ exit</code></p>
+<p align="center">
+  <a href="https://github.com/root-luffy"><img src="https://raw.githubusercontent.com/root-luffy/root-luffy/output/snake.svg" alt="A snake eating my contribution graph" width="100%"></a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/root-luffy"><img src="assets/footer.svg" alt="Thanks for stopping by! See you on the next voyage." width="100%"></a>
+</p>

@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 220" width="1200" height="220" role="img" aria-label="Thanks for stopping by. A small ship sails across the waves.">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#101a3d"/>
+      <stop offset="1" stop-color="#070b1f"/>
+    </linearGradient>
+    <linearGradient id="txt" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#fbbf24"/>
+      <stop offset=".55" stop-color="#f87171"/>
+      <stop offset="1" stop-color="#e879f9"/>
+    </linearGradient>
+    <clipPath id="frame"><rect width="1200" height="220" rx="24"/></clipPath>
+    <style>
+      text { font-family: "Segoe UI", Inter, Helvetica, Arial, sans-serif; }
+      .mono { font-family: "Cascadia Code", "JetBrains Mono", Consolas, Menlo, monospace; }
+      .twinkle { animation: tw 3s ease-in-out infinite; }
+      .t2 { animation-delay: 1s; } .t3 { animation-delay: 2s; }
+      @keyframes tw { 0%,100% { opacity: .25 } 50% { opacity: 1 } }
+      .sail { animation: sail 22s linear -9s infinite; }
+      @keyframes sail { from { transform: translateX(-160px) } to { transform: translateX(1300px) } }
+      .bob { animation: bob 3.5s ease-in-out infinite; transform-box: fill-box; transform-origin: center bottom; }
+      @keyframes bob { 0%,100% { transform: translateY(0) rotate(-3deg) } 50% { transform: translateY(-5px) rotate(3deg) } }
+      .wave1 { animation: drift 8s ease-in-out infinite alternate; }
+      .wave2 { animation: drift 12s ease-in-out infinite alternate-reverse; }
+      @keyframes drift { from { transform: translateX(0) } to { transform: translateX(-60px) } }
+    </style>
+  </defs>
+
+  <g clip-path="url(#frame)">
+    <rect width="1200" height="220" fill="url(#sky)"/>
+    <g fill="#fff">
+      <circle class="twinkle" cx="140" cy="40" r="1.4"/>
+      <circle class="twinkle t2" cx="330" cy="70" r="1.1"/>
+      <circle class="twinkle t3" cx="880" cy="36" r="1.6"/>
+      <circle class="twinkle" cx="1040" cy="80" r="1.2"/>
+      <circle class="twinkle t2" cx="1130" cy="30" r="1.3"/>
+      <circle class="twinkle t3" cx="60" cy="96" r="1"/>
+    </g>
+
+    <text x="600" y="54" text-anchor="middle" font-size="30" font-weight="800" fill="url(#txt)">Thanks for stopping by!</text>
+    <text x="600" y="82" text-anchor="middle" font-size="16" class="mono" fill="#7c86a8">root@luffy:~$ exit  ·  see you on the next voyage</text>
+
+    <g class="wave2" opacity="0.55">
+      <path d="M0 160 Q 60 144 120 160 T 240 160 T 360 160 T 480 160 T 600 160 T 720 160 T 840 160 T 960 160 T 1080 160 T 1200 160 T 1320 160 V220 H0 Z" fill="#1d3a7a"/>
+    </g>
+
+    <g class="sail">
+      <g class="bob">
+        <path d="M0 150 H80 L68 170 H12 Z" fill="#1e293b" stroke="#fbbf24" stroke-width="2"/>
+        <path d="M40 150 V92" stroke="#e2e8f0" stroke-width="2.5"/>
+        <path d="M42 96 L76 136 H42 Z" fill="#f8fafc"/>
+        <path d="M38 102 L12 136 H38 Z" fill="#e2e8f0"/>
+        <path d="M40 92 l14 4 -14 4z" fill="#f87171"/>
+      </g>
+    </g>
+
+    <g class="wave1">
+      <path d="M0 176 Q 50 162 100 176 T 200 176 T 300 176 T 400 176 T 500 176 T 600 176 T 700 176 T 800 176 T 900 176 T 1000 176 T 1100 176 T 1200 176 T 1300 176 V220 H0 Z" fill="#0f2557"/>
+    </g>
+  </g>
+</svg>
