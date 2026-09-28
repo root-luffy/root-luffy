@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 380" width="1200" height="380" role="img" aria-label="GitHub stats for root-luffy: 51 contributions in the last year, 13 public commits, 7 public repos, 1 stars earned">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0b1026"/><stop offset="1" stop-color="#101a3d"/></linearGradient>
+    <linearGradient id="wave" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fbbf24"/><stop offset=".55" stop-color="#f87171"/><stop offset="1" stop-color="#e879f9"/></linearGradient>
+    <linearGradient id="waveFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f87171" stop-opacity=".35"/><stop offset="1" stop-color="#f87171" stop-opacity="0"/></linearGradient>
+    <clipPath id="barClip"><rect x="580" y="108" width="580" height="16" rx="8"/></clipPath>
+    <style>
+      text { font-family: "Segoe UI", Inter, Helvetica, Arial, sans-serif; }
+      .mono, .num { font-family: "Cascadia Code", "JetBrains Mono", Consolas, Menlo, monospace; }
+      .title { font-size: 20px; font-weight: 700; fill: #e2e8f0; }
+      .muted { font-size: 13px; fill: #64748b; }
+      .num { font-size: 32px; font-weight: 700; }
+      .lbl { font-size: 14px; fill: #cbd5e1; }
+      .leg { font-size: 15px; fill: #cbd5e1; }
+      .sub { fill: #64748b; font-size: 13px; }
+      .rise { opacity: 0; animation: rise .7s ease-out forwards; }
+      @keyframes rise { from { opacity: 0; transform: translateY(10px) } to { opacity: 1; transform: none } }
+      .grow { transform-box: fill-box; transform-origin: left; transform: scaleX(0); animation: grow .9s cubic-bezier(.2,.8,.2,1) forwards; }
+      @keyframes grow { to { transform: scaleX(1) } }
+      .draw { stroke-dasharray: 3000; stroke-dashoffset: 3000; animation: draw 3s ease-out .6s forwards; }
+      @keyframes draw { to { stroke-dashoffset: 0 } }
+      .fill { opacity: 0; animation: fade 1.5s ease-out 2s forwards; }
+      @keyframes fade { to { opacity: 1 } }
+      .ping { transform-box: fill-box; transform-origin: center; animation: ping 2s ease-out 3.4s infinite; opacity: 0; }
+      @keyframes ping { 0% { opacity: .8; transform: scale(1) } 100% { opacity: 0; transform: scale(3.2) } }
+      .dot { opacity: 0; animation: fade .4s ease-out 3.4s forwards; }
+    </style>
+  </defs>
+  <rect width="1200" height="380" rx="22" fill="url(#bg)"/>
+  <rect x="1" y="1" width="1198" height="378" rx="21" fill="none" stroke="#1f2a4d"/>
+
+  <text x="40" y="50" class="title">⚓ Ship's log</text>
+  <text x="1160" y="50" text-anchor="end" class="muted mono">updated 2026-09-28 · auto-generated daily</text>
+
+  
+    <g class="rise" style="animation-delay:0.15s">
+      <rect x="40" y="78" width="232" height="84" rx="14" fill="#111831" stroke="#222c4d"/>
+      <rect x="40" y="96" width="4" height="48" rx="2" fill="#fbbf24"/>
+      <text x="62" y="124" class="num" fill="#fbbf24">51</text>
+      <text x="62" y="146" class="lbl">contributions <tspan class="sub">· last 12 months</tspan></text>
+    </g>
+    <g class="rise" style="animation-delay:0.3s">
+      <rect x="290" y="78" width="232" height="84" rx="14" fill="#111831" stroke="#222c4d"/>
+      <rect x="290" y="96" width="4" height="48" rx="2" fill="#f87171"/>
+      <text x="312" y="124" class="num" fill="#f87171">13</text>
+      <text x="312" y="146" class="lbl">commits <tspan class="sub">· public, all time</tspan></text>
+    </g>
+    <g class="rise" style="animation-delay:0.44999999999999996s">
+      <rect x="40" y="178" width="232" height="84" rx="14" fill="#111831" stroke="#222c4d"/>
+      <rect x="40" y="196" width="4" height="48" rx="2" fill="#e879f9"/>
+      <text x="62" y="224" class="num" fill="#e879f9">7</text>
+      <text x="62" y="246" class="lbl">public repos <tspan class="sub">· built from scratch</tspan></text>
+    </g>
+    <g class="rise" style="animation-delay:0.6s">
+      <rect x="290" y="178" width="232" height="84" rx="14" fill="#111831" stroke="#222c4d"/>
+      <rect x="290" y="196" width="4" height="48" rx="2" fill="#34d399"/>
+      <text x="312" y="224" class="num" fill="#34d399">1</text>
+      <text x="312" y="246" class="lbl">stars earned <tspan class="sub">· across my repos</tspan></text>
+    </g>
+
+  <text x="580" y="92" class="lbl rise" style="animation-delay:.3s">Languages across my repos</text>
+  <rect x="580" y="108" width="580" height="16" rx="8" fill="#1a2242"/>
+  <g clip-path="url(#barClip)"><rect x="580.0" y="108" width="191.2" height="16" fill="#3178c6" class="grow" style="animation-delay:0.4s"/><rect x="773.2" y="108" width="152.4" height="16" fill="#dea584" class="grow" style="animation-delay:0.52s"/><rect x="927.6" y="108" width="85.2" height="16" fill="#f1e05a" class="grow" style="animation-delay:0.64s"/><rect x="1014.8" y="108" width="78.4" height="16" fill="#89e051" class="grow" style="animation-delay:0.76s"/><rect x="1095.2" y="108" width="41.5" height="16" fill="#012456" class="grow" style="animation-delay:0.88s"/><rect x="1138.8" y="108" width="19.2" height="16" fill="#475569" class="grow" style="animation-delay:1s"/></g>
+  
+    <g class="rise" style="animation-delay:0.6s">
+      <circle cx="586" cy="155" r="6" fill="#3178c6"/>
+      <text x="600" y="160" class="leg">TypeScript <tspan class="sub">33.3%</tspan></text>
+    </g>
+    <g class="rise" style="animation-delay:0.7s">
+      <circle cx="782" cy="155" r="6" fill="#dea584"/>
+      <text x="796" y="160" class="leg">Rust <tspan class="sub">26.6%</tspan></text>
+    </g>
+    <g class="rise" style="animation-delay:0.8s">
+      <circle cx="978" cy="155" r="6" fill="#f1e05a"/>
+      <text x="992" y="160" class="leg">JavaScript <tspan class="sub">15.0%</tspan></text>
+    </g>
+    <g class="rise" style="animation-delay:0.9s">
+      <circle cx="586" cy="189" r="6" fill="#89e051"/>
+      <text x="600" y="194" class="leg">Shell <tspan class="sub">13.9%</tspan></text>
+    </g>
+    <g class="rise" style="animation-delay:1s">
+      <circle cx="782" cy="189" r="6" fill="#012456"/>
+      <text x="796" y="194" class="leg">PowerShell <tspan class="sub">7.5%</tspan></text>
+    </g>
+    <g class="rise" style="animation-delay:1.1s">
+      <circle cx="978" cy="189" r="6" fill="#475569"/>
+      <text x="992" y="194" class="leg">Other <tspan class="sub">3.7%</tspan></text>
+    </g>
+
+  <text x="40" y="288" class="muted mono">contribution tide · last 52 weeks</text>
+  <path d="M40.0 356.0 C50.8 356.0 50.8 332.7 61.5 332.7 C72.3 332.7 72.3 337.3 83.1 337.3 C93.8 337.3 93.8 356.0 104.6 356.0 C115.4 356.0 115.4 356.0 126.2 356.0 C136.9 356.0 136.9 356.0 147.7 356.0 C158.5 356.0 158.5 356.0 169.2 356.0 C180.0 356.0 180.0 356.0 190.8 356.0 C201.5 356.0 201.5 356.0 212.3 356.0 C223.1 356.0 223.1 300.0 233.8 300.0 C244.6 300.0 244.6 351.3 255.4 351.3 C266.2 351.3 266.2 356.0 276.9 356.0 C287.7 356.0 287.7 342.0 298.5 342.0 C309.2 342.0 309.2 356.0 320.0 356.0 C330.8 356.0 330.8 356.0 341.5 356.0 C352.3 356.0 352.3 356.0 363.1 356.0 C373.8 356.0 373.8 356.0 384.6 356.0 C395.4 356.0 395.4 356.0 406.2 356.0 C416.9 356.0 416.9 356.0 427.7 356.0 C438.5 356.0 438.5 356.0 449.2 356.0 C460.0 356.0 460.0 356.0 470.8 356.0 C481.5 356.0 481.5 356.0 492.3 356.0 C503.1 356.0 503.1 356.0 513.8 356.0 C524.6 356.0 524.6 356.0 535.4 356.0 C546.2 356.0 546.2 356.0 556.9 356.0 C567.7 356.0 567.7 356.0 578.5 356.0 C589.2 356.0 589.2 346.7 600.0 346.7 C610.8 346.7 610.8 356.0 621.5 356.0 C632.3 356.0 632.3 356.0 643.1 356.0 C653.8 356.0 653.8 337.3 664.6 337.3 C675.4 337.3 675.4 342.0 686.2 342.0 C696.9 342.0 696.9 346.7 707.7 346.7 C718.5 346.7 718.5 351.3 729.2 351.3 C740.0 351.3 740.0 346.7 750.8 346.7 C761.5 346.7 761.5 356.0 772.3 356.0 C783.1 356.0 783.1 356.0 793.8 356.0 C804.6 356.0 804.6 356.0 815.4 356.0 C826.2 356.0 826.2 351.3 836.9 351.3 C847.7 351.3 847.7 356.0 858.5 356.0 C869.2 356.0 869.2 356.0 880.0 356.0 C890.8 356.0 890.8 356.0 901.5 356.0 C912.3 356.0 912.3 356.0 923.1 356.0 C933.8 356.0 933.8 356.0 944.6 356.0 C955.4 356.0 955.4 356.0 966.2 356.0 C976.9 356.0 976.9 351.3 987.7 351.3 C998.5 351.3 998.5 346.7 1009.2 346.7 C1020.0 346.7 1020.0 356.0 1030.8 356.0 C1041.5 356.0 1041.5 351.3 1052.3 351.3 C1063.1 351.3 1063.1 342.0 1073.8 342.0 C1084.6 342.0 1084.6 356.0 1095.4 356.0 C1106.2 356.0 1106.2 356.0 1116.9 356.0 C1127.7 356.0 1127.7 356.0 1138.5 356.0 C1149.2 356.0 1149.2 337.3 1160.0 337.3 L1160 356 L40 356 Z" fill="url(#waveFill)" class="fill"/>
+  <path d="M40.0 356.0 C50.8 356.0 50.8 332.7 61.5 332.7 C72.3 332.7 72.3 337.3 83.1 337.3 C93.8 337.3 93.8 356.0 104.6 356.0 C115.4 356.0 115.4 356.0 126.2 356.0 C136.9 356.0 136.9 356.0 147.7 356.0 C158.5 356.0 158.5 356.0 169.2 356.0 C180.0 356.0 180.0 356.0 190.8 356.0 C201.5 356.0 201.5 356.0 212.3 356.0 C223.1 356.0 223.1 300.0 233.8 300.0 C244.6 300.0 244.6 351.3 255.4 351.3 C266.2 351.3 266.2 356.0 276.9 356.0 C287.7 356.0 287.7 342.0 298.5 342.0 C309.2 342.0 309.2 356.0 320.0 356.0 C330.8 356.0 330.8 356.0 341.5 356.0 C352.3 356.0 352.3 356.0 363.1 356.0 C373.8 356.0 373.8 356.0 384.6 356.0 C395.4 356.0 395.4 356.0 406.2 356.0 C416.9 356.0 416.9 356.0 427.7 356.0 C438.5 356.0 438.5 356.0 449.2 356.0 C460.0 356.0 460.0 356.0 470.8 356.0 C481.5 356.0 481.5 356.0 492.3 356.0 C503.1 356.0 503.1 356.0 513.8 356.0 C524.6 356.0 524.6 356.0 535.4 356.0 C546.2 356.0 546.2 356.0 556.9 356.0 C567.7 356.0 567.7 356.0 578.5 356.0 C589.2 356.0 589.2 346.7 600.0 346.7 C610.8 346.7 610.8 356.0 621.5 356.0 C632.3 356.0 632.3 356.0 643.1 356.0 C653.8 356.0 653.8 337.3 664.6 337.3 C675.4 337.3 675.4 342.0 686.2 342.0 C696.9 342.0 696.9 346.7 707.7 346.7 C718.5 346.7 718.5 351.3 729.2 351.3 C740.0 351.3 740.0 346.7 750.8 346.7 C761.5 346.7 761.5 356.0 772.3 356.0 C783.1 356.0 783.1 356.0 793.8 356.0 C804.6 356.0 804.6 356.0 815.4 356.0 C826.2 356.0 826.2 351.3 836.9 351.3 C847.7 351.3 847.7 356.0 858.5 356.0 C869.2 356.0 869.2 356.0 880.0 356.0 C890.8 356.0 890.8 356.0 901.5 356.0 C912.3 356.0 912.3 356.0 923.1 356.0 C933.8 356.0 933.8 356.0 944.6 356.0 C955.4 356.0 955.4 356.0 966.2 356.0 C976.9 356.0 976.9 351.3 987.7 351.3 C998.5 351.3 998.5 346.7 1009.2 346.7 C1020.0 346.7 1020.0 356.0 1030.8 356.0 C1041.5 356.0 1041.5 351.3 1052.3 351.3 C1063.1 351.3 1063.1 342.0 1073.8 342.0 C1084.6 342.0 1084.6 356.0 1095.4 356.0 C1106.2 356.0 1106.2 356.0 1116.9 356.0 C1127.7 356.0 1127.7 356.0 1138.5 356.0 C1149.2 356.0 1149.2 337.3 1160.0 337.3" fill="none" stroke="url(#wave)" stroke-width="3" stroke-linecap="round" class="draw"/>
+  <circle cx="1160.0" cy="337.3" r="5" fill="#e879f9" class="ping"/>
+  <circle cx="1160.0" cy="337.3" r="5" fill="#e879f9" class="dot"/>
+</svg>

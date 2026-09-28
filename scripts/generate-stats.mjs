@@ -1,7 +1,7 @@
 // Generates assets/generated/stats.svg, an animated "ship's log" card built from
 // live GitHub data. Runs in GitHub Actions (see .github/workflows/profile.yml).
 //
-//   GITHUB_TOKEN=... node scripts/generate-stats.mjs     # real data
+//   node scripts/generate-stats.mjs          # real, public data (GITHUB_TOKEN optional)
 //   node scripts/generate-stats.mjs --mock               # sample data, for local design work
 
 import { mkdirSync, writeFileSync } from "node:fs";
@@ -9,42 +9,65 @@ import { mkdirSync, writeFileSync } from "node:fs";
 const LOGIN = process.env.PROFILE_LOGIN || "root-luffy";
 const OUT = "assets/generated/stats.svg";
 
-const QUERY = `
-query($login: String!) {
-  user(login: $login) {
-    followers { totalCount }
-    pullRequests { totalCount }
-    repositories(first: 100, ownerAffiliations: OWNER, privacy: PUBLIC, isFork: false) {
-      totalCount
-      nodes {
-        stargazerCount
-        languages(first: 10, orderBy: { field: SIZE, direction: DESC }) {
-          edges { size node { name color } }
-        }
-      }
-    }
-    contributionsCollection {
-      totalCommitContributions
-      restrictedContributionsCount
-      contributionCalendar {
-        totalContributions
-        weeks { contributionDays { contributionCount } }
-      }
-    }
+// Everything below comes from public endpoints, so no token is required.
+// GITHUB_TOKEN is used when present, only to raise the API rate limit.
+const LANG_COLORS = {
+  Rust: "#dea584", TypeScript: "#3178c6", JavaScript: "#f1e05a", Python: "#3572a5", Shell: "#89e051",
+  PowerShell: "#012456", AutoHotkey: "#6594b9", Go: "#00add8", HTML: "#e34c26", CSS: "#663399",
+  Dockerfile: "#384d54", Makefile: "#427819", "C++": "#f34b7d", C: "#555555", Java: "#b07219",
+  Solidity: "#aa6746", Lua: "#000080", Nix: "#7e7eff", TSQL: "#e38c00", PLpgSQL: "#336790",
+};
+
+async function api(path) {
+  const headers = { Accept: "application/vnd.github+json", "User-Agent": LOGIN };
+  if (process.env.GITHUB_TOKEN) headers.Authorization = `Bearer ${process.env.GITHUB_TOKEN}`;
+  const res = await fetch(`https://api.github.com${path}`, { headers });
+  if (!res.ok) throw new Error(`${path}: HTTP ${res.status}`);
+  return res.json();
+}
+
+// Contribution calendar from the public profile page: one <tool-tip> per day,
+// tied to cell ids like "contribution-day-component-<weekday>-<week>".
+async function contributionWeeks() {
+  const res = await fetch(`https://github.com/users/${LOGIN}/contributions`, { headers: { "User-Agent": LOGIN } });
+  if (!res.ok) throw new Error(`contributions page: HTTP ${res.status}`);
+  const html = await res.text();
+  const weeks = [];
+  const re = /for="contribution-day-component-(\d+)-(\d+)"[^>]*>(No|\d+) contributions? on/g;
+  for (const [, , week, count] of html.matchAll(re)) {
+    const w = Number(week);
+    weeks[w] ??= { contributionDays: [] };
+    weeks[w].contributionDays.push({ contributionCount: count === "No" ? 0 : Number(count) });
   }
-}`;
+  if (!weeks.length) throw new Error("could not parse the contribution calendar");
+  return weeks.map((w) => w ?? { contributionDays: [] });
+}
 
 async function fetchData() {
-  const token = process.env.GITHUB_TOKEN;
-  if (!token) throw new Error("GITHUB_TOKEN is not set (use --mock for sample data)");
-  const res = await fetch("https://api.github.com/graphql", {
-    method: "POST",
-    headers: { Authorization: `bearer ${token}`, "Content-Type": "application/json" },
-    body: JSON.stringify({ query: QUERY, variables: { login: LOGIN } }),
-  });
-  const json = await res.json();
-  if (json.errors) throw new Error(JSON.stringify(json.errors));
-  return json.data.user;
+  const repos = (await api(`/users/${LOGIN}/repos?type=owner&per_page=100`)).filter((r) => !r.fork);
+  const nodes = [];
+  for (const r of repos) {
+    const langs = await api(`/repos/${LOGIN}/${r.name}/languages`);
+    nodes.push({
+      stargazerCount: r.stargazers_count,
+      languages: {
+        edges: Object.entries(langs).map(([name, size]) => ({ size, node: { name, color: LANG_COLORS[name] } })),
+      },
+    });
+  }
+  const weeks = await contributionWeeks();
+  const total = weeks.flatMap((w) => w.contributionDays).reduce((s, d) => s + d.contributionCount, 0);
+  const commits = (await api(`/search/commits?q=author:${LOGIN}&per_page=1`)).total_count;
+  return {
+    repositories: { totalCount: repos.length, nodes },
+    contributionsCollection: {
+      totalCommitContributions: commits,
+      restrictedContributionsCount: 0,
+      contributionCalendar: { totalContributions: total, weeks },
+    },
+    pullRequests: { totalCount: 0 },
+    followers: { totalCount: 0 },
+  };
 }
 
 function mockData() {
@@ -121,7 +144,7 @@ function render(s) {
   // Stat tiles
   const tiles = [
     { label: "contributions", sub: "last 12 months", value: s.contributions, color: "#fbbf24" },
-    { label: "commits", sub: "last 12 months", value: s.commits, color: "#f87171" },
+    { label: "commits", sub: "public, all time", value: s.commits, color: "#f87171" },
     { label: "public repos", sub: "built from scratch", value: s.repos, color: "#e879f9" },
     { label: "stars earned", sub: "across my repos", value: s.stars, color: "#34d399" },
   ];
@@ -173,7 +196,7 @@ function render(s) {
   const area = `${line} L${wx + ww} ${wy + wh} L${wx} ${wy + wh} Z`;
   const last = pts[pts.length - 1];
 
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-label="GitHub stats for ${LOGIN}: ${s.contributions} contributions and ${s.commits} commits in the last year, ${s.repos} public repos, ${s.stars} stars">
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-label="GitHub stats for ${LOGIN}: ${s.contributions} contributions in the last year, ${s.commits} public commits, ${s.repos} public repos, ${s.stars} stars earned">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0b1026"/><stop offset="1" stop-color="#101a3d"/></linearGradient>
     <linearGradient id="wave" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fbbf24"/><stop offset=".55" stop-color="#f87171"/><stop offset="1" stop-color="#e879f9"/></linearGradient>

@@ -38,9 +38,5 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/root-luffy"><img src="https://raw.githubusercontent.com/root-luffy/root-luffy/output/snake.svg" alt="A snake eating my contribution graph" width="100%"></a>
-</p>
-
-<p align="center">
   <a href="https://github.com/root-luffy"><img src="assets/footer.svg" alt="Thanks for stopping by! See you on the next voyage." width="100%"></a>
 </p>
