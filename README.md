@@ -12,10 +12,6 @@
   <a href="https://github.com/root-luffy/UpsideDown"><img alt="Latest: UpsideDown" src="https://img.shields.io/badge/latest-UpsideDown-f472b6?style=flat-square&labelColor=0d1224"></a>
 </p>
 
-<p align="center">
-  <a href="https://github.com/root-luffy?tab=repositories"><img src="assets/about.svg" alt="About me: I build small, sharp tools for the friction I hit every day, then open-source them. Now building AgentGate, a Rust gateway that decides which AI agent may call which MCP tool. Learning more Rust, and poking at Bitcoin, cryptography and wallets. Terminal ricer. Based somewhere in the Milky Way." width="100%"></a>
-</p>
-
 <h3 align="center">🧭 Featured voyages</h3>
 
 <p align="center">
